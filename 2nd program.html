@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="mathForm">
+        <label for="expression">Enter Mathematical Expression: </label>
+        <input type="text" name="expression" id="expression">
+        <input type="button" value="Evaluate" onclick="ValidateExpression()">
+    </form>
+
+    <div id="result"></div>
+
+</body>
+<script>
+    function ValidateExpression() {
+        try {
+            let expression_V = document.getElementById("expression").value
+            let result = eval(expression_V)
+            document.getElementById('result').innerHTML = "The result of the Given Expression is:" + result;
+        }catch (e) {
+            document.getElementById('result').innerHTML = "Invalid Expression";
+    }
+}
+</script>
+
+</html>

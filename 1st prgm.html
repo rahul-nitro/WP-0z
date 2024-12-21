@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 1</title>
+</head>
+<script>
+    function ValidateForm() {
+        let name = document.getElementById('name').value
+        let email = document.getElementById('email').value
+        let mobile = document.getElementById('mobile').value
+        let password = document.getElementById('password').value
+        let PassRegex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,20}$/;
+        let MobileRegex = /^[0-9]{10}$/
+
+        if (name == "") {
+            alert("Invalid Input Please Enter Email!! ")
+            return false;
+        }
+        
+        if (email == "") {
+            alert("Please Enter Email!!")
+             return false;
+        } 
+        if (!PassRegex.test(password)) {
+            alert("Invalid Password Please Enter Strong Password !! ")
+             return false;
+        } 
+        if (!MobileRegex.test(mobile)) {
+            alert("Invalid Mobile Number")
+            return false;
+        } 
+
+        alert("Form Submitted Successfully")      
+        return true;
+    
+}
+
+</script>
+<body>
+ <h1>Welcome To College Form </h1>
+ <form onsubmit="return ValidateForm()">
+    <label>Name:</label> <input type="text" id="name" placeholder="name"> <br>
+    <label>Email:</label> <input type="text" id="email" placeholder="email"> <br> 
+    <label>Password:</label> <input type="password" id="password" placeholder="password"> <br>
+    <label>Mobile:</label> <input type="number" id="mobile" placeholder="Mobile Number"><br>
+    <label>Gender :</label>
+    <input type="radio" name="male">Male
+    <input type="radio" name="female">female <br>
+    Courses:
+    <input type="checkbox">BCA
+    <input type="checkbox">MCA
+    <input type="checkbox">BSC
+    <input type="checkbox">MBA <br>
+    <button>Submit</button>
+ </form>
+</body>
+
+</html>

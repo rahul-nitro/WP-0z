@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of the natural numbers</title>
+</head>
+<script>
+    function SumOfNaturalNumber(n){
+        sum = 0;
+        for (let i = 0; i <= n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    function CalculateSum(){
+        let n = document.getElementById('inputNumber').value
+        n = parseInt(n);
+        if(!isNaN(n) && n > 0){
+            let sum = SumOfNaturalNumber(n)
+            alert("The sum of the ->" + n + "Natural Number is :" + sum);
+        }else{
+            alert("Invalid Expression")
+        }
+    }
+</script>
+<body>
+
+    <h2>Sum of the Natural Numbers</h2>
+    <label for="inputNumber">Enter the Number:</label>
+    <input type="number" id="inputNumber" name="number">
+    <button onclick="CalculateSum()">Calculate</button>      
+
+    
+</body>
+</html>

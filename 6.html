@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+</head>
+<script>
+    function calc(){
+        var m1,m2,m3,total,avg = 0;
+        var result = "";
+        var grade = "";
+        m1 = parseInt(document.getElementById('m1').value)
+        m2 = parseInt(document.getElementById('m2').value)
+        m3 = parseInt(document.getElementById('m3').value)
+        total = m1 + m2 + m3;
+        avg = total / 3;
+        if(m1 < 35 && m2 < 35 && m3 <35 ){
+            result = "fail";
+            grade = "D";
+        }else if(avg > 75){
+            result = "Distiction";
+            grade = "A";
+        }else if(avg >=60 && avg <= 75){
+            result = "First Class";
+            grade = "B";
+        }else if(avg >=50 && avg <=60){
+            result = "C";
+            grade = "Second Class"
+        }else{
+            result = "Fail";
+            grade = "D"
+        }
+        document.form1.result.value = result;
+        document.form1.grade.value = grade;
+        document.form1.total.value = total;
+        document.form1.average.value = avg;
+    }
+</script>
+<body>
+    <form name="form1">
+        <table border="1">
+            <tr>
+                <td>Student Name:</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">Subject Marks</td>
+            </tr>
+            <tr>
+                <td>Web Programming</td>
+                <td><input type="text" id="m1"></td>
+            </tr>
+            <tr>
+                <td>Quantitative Techniques</td>
+                <td><input type="text" id="m2"></td>
+            </tr>
+            <tr>
+                <td>Data Analytics</td>
+                <td><input type="text" id="m3"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> <input type="button" value="calculate" onclick="calc()"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><input type="text" name="total"></td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td><input type="text" name="average"></td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type="text" name="result"></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td><input type="text" name="grade"></td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

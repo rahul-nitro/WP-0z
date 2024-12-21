@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DateInWords Program</title>
+</head>
+<body>
+    <h1>Date InWords</h1>
+    <p id="dateInwords"></p>
+</body>
+<script>
+    const days = ["sunday","monday","tuesday","wednesday","Thursday","friday","saturday"]
+    const months = ["january","february","march","april","may","june","july","august","september","october","november","December"]
+    const now = new Date();
+    const year = now.getFullYear();
+    const Month = months[now.getMonth()];
+    const DayOfTheMonth = days[now.getDay()];
+    const date = now.getDate();
+    const dayString = `<strong>${DayOfTheMonth} , ${date}, ${Month}, ${year}  </strong>`;
+    document.getElementById('dateInwords').innerHTML = dayString ;
+</script>
+</html>
